@@ -74,7 +74,6 @@ if uploaded_file:
             st.warning("⚠️ Several days had high orders but low revenue per order. Consider optimizing small order costs.")
 
         csv = daily_summary.to_csv(index=False).encode('utf-8')
-        st.download_button("Download Daily Summary CSV", csv, "daily_summary.csv", "text/csv")
 
     with tab2:
         st.subheader("Top Performing Products")
