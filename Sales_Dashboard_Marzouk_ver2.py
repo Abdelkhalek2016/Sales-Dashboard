@@ -8,7 +8,14 @@ st.set_page_config(page_title="Sales Dashboard", layout="wide")
 # Upload CSV file
 st.sidebar.header("Upload Your Sales Data")
 uploaded_file = st.sidebar.file_uploader("Choose a file", type=["csv", "xlsx"])
-
+hide_button = """
+    <style>
+    [data-testid="stBaseButton-header"] {
+        display: none;
+    }
+    </style>
+    """
+st.markdown(hide_button, unsafe_allow_html=True)
 if uploaded_file:
     if uploaded_file.name.endswith(".csv"):
         df = pd.read_csv(uploaded_file)
