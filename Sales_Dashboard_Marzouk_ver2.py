@@ -16,7 +16,7 @@ if uploaded_file:
         df = pd.read_excel(uploaded_file)
 
 
-    df = pd.read_excel(r"C:\Users\A80843\Me\Sales_for_eda.xlsx")
+    df = pd.read_excel(r"Sales_for_eda.xlsx")
     # Preprocess
     df['date_only'] = pd.to_datetime(df['date_only'])
     df['time_only'] = pd.to_datetime(df['time_only'], format='%H:%M:%S').dt.time
